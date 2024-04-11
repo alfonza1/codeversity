@@ -1,13 +1,13 @@
-package com.UserProgressService;
+package com.UserCourseManagementService;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class UserProgressServiceApplication {
+public class UserCourseManagementApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UserProgressServiceApplication.class, args);
+		SpringApplication.run(UserCourseManagementApplication.class, args);
 	}
 
 }

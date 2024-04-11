@@ -1,0 +1,4 @@
+User Model: Since user authentication is managed by Firebase, you might only need to store the Firebase UID in this model for reference.
+Enrollment Model: Links users to courses and tracks progress. It should include references to the User and Course models and fields for progress tracking.
+
+tracking progress will be added through frontend local storage

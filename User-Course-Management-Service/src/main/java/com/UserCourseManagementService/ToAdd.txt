@@ -1,0 +1,25 @@
+For the User Content Management system, the focus is on users, their progress, and course enrollments.
+
+GET /users/{userId}
+Retrieves detailed information about a specific user.
+
+Course Enrollments
+GET /users/{userId}/enrollments
+Lists all courses a user is enrolled in.
+
+POST /users/{userId}/enrollments
+Enrolls a user in a course. The request body should specify the course ID.
+
+DELETE /users/{userId}/enrollments/{courseId}
+Unenrolls a user from a course.
+
+Progress Tracking
+GET /users/{userId}/progress
+Retrieves the progress of a user across all courses.
+
+GET /users/{userId}/progress/{courseId}
+Retrieves a user's progress in a specific course.
+
+POST /users/{userId}/progress/{courseId}
+Updates the progress for a user in a course. This could include completing a module or passing a quiz, for example. The request body would contain details about the progress update.
+

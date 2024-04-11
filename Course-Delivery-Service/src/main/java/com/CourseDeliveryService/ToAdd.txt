@@ -1,0 +1,8 @@
+Stores and serves educational content
+
+CreateCourse: /courses (POST) - Add a new course.
+UpdateCourse: /courses/{id} (PUT) - Update course details.
+DeleteCourse: /courses/{id} (DELETE) - Remove a course.
+GetCourses: /courses (GET) - List available courses.
+GetCourseDetails: /courses/{id} (GET) - Get detailed information about a course.
+
