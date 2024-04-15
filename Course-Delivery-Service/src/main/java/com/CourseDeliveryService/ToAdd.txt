@@ -6,3 +6,5 @@ DeleteCourse: /courses/{id} (DELETE) - Remove a course.
 GetCourses: /courses (GET) - List available courses.
 GetCourseDetails: /courses/{id} (GET) - Get detailed information about a course.
 
+multiple modules make a course. each module needs a title, each module needs a description.
+each course needs a title, list of subjects, one language, and one career. each course needs a description.

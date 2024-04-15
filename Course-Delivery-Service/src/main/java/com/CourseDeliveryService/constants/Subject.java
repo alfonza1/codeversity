@@ -1,0 +1,21 @@
+package com.CourseDeliveryService.constants;
+
+public enum Subject {
+    AI,
+    CLOUD_COMPUTING,
+    CODE_FOUNDATIONS,
+    COMPUTER_SCIENCE,
+    CYBERSECURITY,
+    DATA_ANALYTICS,
+    DATA_SCIENCE,
+    DATA_VISUALIZATION,
+    DEVELOPER_TOOLS,
+    DEVOPS,
+    GAME_DEVELOPMENT,
+    IT,
+    MACHINE_LEARNING,
+    MATH,
+    MOBILE_DEVELOPMENT,
+    WEB_DESIGN,
+    WEB_DEVELOPMENT
+}
