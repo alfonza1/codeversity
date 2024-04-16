@@ -6,7 +6,6 @@ import com.CourseDeliveryService.exception.NullFieldException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -49,9 +48,5 @@ public class CourseService {
         if (course.getCareerPath() == null) throw new NullFieldException("careerPath");
 
         if (course.getDescription() == null) throw new NullFieldException("description");
-//        // Optional check for framework since it may be null
-//        if (course.getFramework() == null) {
-//            throw new NullFieldException("framework");
-//        }
     }
 }
