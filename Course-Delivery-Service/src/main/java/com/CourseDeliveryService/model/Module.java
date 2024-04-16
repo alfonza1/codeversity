@@ -10,13 +10,13 @@ public class Module {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 50)
     private String title;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 255)
     private String video;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 255)
     private String description;
 
     @ManyToOne

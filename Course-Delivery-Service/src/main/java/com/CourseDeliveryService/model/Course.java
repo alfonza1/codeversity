@@ -17,25 +17,35 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 50)
     private String title;
 
     @ElementCollection(fetch = FetchType.LAZY)
+    @Column(nullable = false, length = 255)
     private List<Subject> subjects;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 25)
     private Language language;
 
-    @Column(nullable = true)
+    @Column(nullable = true, length = 25)
     private Framework framework;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 25)
     private CareerPath careerPath;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 255)
     private String description;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Module> modules = new ArrayList<>();
 
+    public Course(String title, List<Subject> subjects, Language language, Framework framework, CareerPath careerPath, String description, List<Module> modules) {
+        this.title = title;
+        this.subjects = subjects;
+        this.language = language;
+        this.framework = framework;
+        this.careerPath = careerPath;
+        this.description = description;
+        this.modules = modules;
+    }
 }
