@@ -41,12 +41,18 @@ public class CourseService {
     private void validateCourse(Course course) {
         if (course.getTitle() == null) throw new NullFieldException("title");
 
-        if (course.getSubjects() == null || course.getSubjects().isEmpty()) throw new NullFieldException("subjects");
-
         if (course.getLanguage() == null) throw new NullFieldException("language");
 
         if (course.getCareerPath() == null) throw new NullFieldException("careerPath");
 
         if (course.getDescription() == null) throw new NullFieldException("description");
+
+        if (course.getModules() == null) throw new NullFieldException("modules");
+
+        if (course.getSubjects() == null || course.getSubjects().isEmpty()) throw new NullFieldException("subjects");
+
+        if (course.getModules().size() < 4) throw new IllegalArgumentException("Module list needs at least 4 modules.");
+
+
     }
 }

@@ -4,6 +4,7 @@ import com.CourseDeliveryService.constants.CareerPath;
 import com.CourseDeliveryService.constants.Framework;
 import com.CourseDeliveryService.constants.Language;
 import com.CourseDeliveryService.constants.Subject;
+import com.CourseDeliveryService.validators.MinModuleCount;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -36,6 +37,7 @@ public class Course {
     @Column(nullable = false, length = 255)
     private String description;
 
+    @MinModuleCount(value = 4, message = "A course must have at least 4 modules")
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Module> modules = new ArrayList<>();
 

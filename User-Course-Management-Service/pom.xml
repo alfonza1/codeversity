@@ -14,7 +14,7 @@
 	<name>User-Progress-Service</name>
 	<description>User Progress Service for LearnCode</description>
 	<properties>
-		<java.version>22</java.version>
+		<java.version>20</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
