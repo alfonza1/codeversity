@@ -1,7 +1,6 @@
 package com.CourseDeliveryService.validators;
 
 import javax.validation.Constraint;
-import javax.validation.Payload;
 import java.lang.annotation.*;
 
 @Documented
@@ -13,7 +12,7 @@ public @interface MinModuleCount {
 
     Class<?>[] groups() default {};
 
-    Class<? extends Payload>[] payload() default {};
+    Class[] payload() default {};
 
     int value() default 4;
 }

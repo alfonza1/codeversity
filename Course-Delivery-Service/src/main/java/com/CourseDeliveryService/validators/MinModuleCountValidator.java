@@ -1,5 +1,7 @@
 package com.CourseDeliveryService.validators;
 
+import com.CourseDeliveryService.model.Module;
+
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import java.util.List;

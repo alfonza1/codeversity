@@ -53,6 +53,5 @@ public class CourseService {
 
         if (course.getModules().size() < 4) throw new IllegalArgumentException("Module list needs at least 4 modules.");
 
-
     }
 }

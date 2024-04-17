@@ -14,3 +14,5 @@ each course needs a title, list of subjects, one language, and one career. each 
 tests run before pushed. if any fails then the push is rejected.
 
 Logging tools
+
+change service and test to always be whatever the min module count is set to.

@@ -1,0 +1,30 @@
+{
+    "title": "Introduction to React",
+    "subjects": ["WEB_DEVELOPMENT","SOFTWARE_ENGINEERING"],
+    "language": "JAVASCRIPT
+    "framework": "REACT",
+    "careerPath": "FULL_STACK_ENGINEER",
+    "description": "A complete guide to mastering React.",
+    "modules": [
+        {
+            "title": "React Basics",
+            "video": "http://example.com/react-basics",
+            "description": "An introductory module on React basics."
+        },
+        {
+            "title": "Advanced React",
+            "video": "http://example.com/advanced-react",
+            "description": "Diving deeper into React."
+        },
+        {
+            "title": "React State Management",
+            "video": "http://example.com/react-state",
+            "description": "Managing state in React applications."
+        },
+        {
+            "title": "React Router",
+            "video": "http://example.com/react-router",
+            "description": "Routing with React Router."
+        }
+    ]
+}
