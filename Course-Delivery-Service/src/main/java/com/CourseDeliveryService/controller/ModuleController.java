@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/module")
+@RequestMapping("api/modules")
 public class ModuleController {
 
     @Autowired

@@ -27,6 +27,7 @@ class ModuleControllerTest {
     ModuleService moduleService;
 
     private MockMvc mockMvc;
+    private static final String BASE_URL = "/api/modules";  // Base URL as a constant
 
     @BeforeEach
     void setUp() {
@@ -38,7 +39,7 @@ class ModuleControllerTest {
     void addModule() throws Exception {
         Module module = new Module("Test Title", "Test Video", "Test Description");
         when(moduleService.saveModule(module)).thenReturn(module);
-        mockMvc.perform(post("/module")
+        mockMvc.perform(post(BASE_URL)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{}"))
                 .andExpect(status().isOk());
@@ -49,7 +50,7 @@ class ModuleControllerTest {
         Module module1 = new Module("Test Title", "Test Video", "Test Description");
         Module module2 = new Module("Test Title", "Test Video", "Test Description");
         when(moduleService.getAllModules()).thenReturn(Arrays.asList(module1, module2));
-        mockMvc.perform(get("/module")
+        mockMvc.perform(get(BASE_URL)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
@@ -59,7 +60,7 @@ class ModuleControllerTest {
         Long id = 1L;
         Module module = new Module("Test Title", "Test Video", "Test Description");
         when(moduleService.getModuleById(id)).thenReturn(Optional.of(module));
-        mockMvc.perform(get("/module/" + id)
+        mockMvc.perform(get(BASE_URL + "/" + id)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
@@ -69,7 +70,7 @@ class ModuleControllerTest {
         Module module = new Module("Test Title", "Test Video", "Test Description");
         Long id = 1L;
         when(moduleService.updateModule(module)).thenReturn(module);
-        mockMvc.perform(put("/module/" + id)
+        mockMvc.perform(put(BASE_URL + "/" + id)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{}"))
                 .andExpect(status().isOk());
@@ -78,7 +79,7 @@ class ModuleControllerTest {
     @Test
     void deleteModule() throws Exception {
         Long id = 1L;
-        mockMvc.perform(delete("/module/" + id)
+        mockMvc.perform(delete(BASE_URL + "/" + id)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
@@ -89,7 +90,7 @@ class ModuleControllerTest {
         Module module1 = new Module("Test Title", "Test Video", "Test Description");
         Module module2 = new Module("Test Title", "Test Video", "Test Description");
         when(moduleService.getModulesByCourseId(courseId)).thenReturn(Arrays.asList(module1, module2));
-        mockMvc.perform(get("/module/courses/" + courseId)
+        mockMvc.perform(get(BASE_URL + "/courses/" + courseId)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }

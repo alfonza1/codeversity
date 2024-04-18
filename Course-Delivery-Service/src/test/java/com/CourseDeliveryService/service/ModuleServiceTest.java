@@ -51,16 +51,23 @@ class ModuleServiceTest {
 
     @Test
     void updateModule() {
+        Long moduleId = 1L;  // Set an arbitrary module ID
         Module module = new Module("Test Title", "Test Video", "Test Description");
+        module.setId(moduleId);  // Ensure the module has an ID
+        when(moduleRepository.existsById(moduleId)).thenReturn(true);
         when(moduleRepository.save(any(Module.class))).thenReturn(module);
         assertEquals(module, moduleService.updateModule(module));
+        verify(moduleRepository).save(module);
     }
+
 
     @Test
     void deleteModule() {
         Long id = 1L;
+        when(moduleRepository.existsById(id)).thenReturn(true);
+        doNothing().when(moduleRepository).deleteById(id);
         moduleService.deleteModule(id);
-        verify(moduleRepository, times(1)).deleteById(id);
+        verify(moduleRepository).deleteById(id);
     }
 
     @Test

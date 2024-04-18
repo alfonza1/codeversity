@@ -73,6 +73,7 @@ class CourseServiceTest {
     @Test
     void updateCourse_withValidData() {
         Course course = createValidCourse();
+        when(courseRepository.existsById(course.getId())).thenReturn(true); // Ensure the course exists
         when(courseRepository.save(course)).thenReturn(course);
         assertEquals(course, courseService.updateCourse(course));
         verify(courseRepository).save(course);
@@ -81,10 +82,12 @@ class CourseServiceTest {
     @Test
     void deleteCourse() {
         Long id = 1L;
+        when(courseRepository.existsById(id)).thenReturn(true);
         doNothing().when(courseRepository).deleteById(id);
         courseService.deleteCourse(id);
         verify(courseRepository).deleteById(id);
     }
+
 
     @Test
     void getCourseById() {

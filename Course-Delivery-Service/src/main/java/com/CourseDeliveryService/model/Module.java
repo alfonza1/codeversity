@@ -28,4 +28,8 @@ public class Module {
         this.description = description;
         this.video = video;
     }
+
+    public Module() {
+
+    }
 }

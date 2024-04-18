@@ -50,4 +50,7 @@ public class Course {
         this.description = description;
         this.modules = modules;
     }
+
+    public Course() {
+    }
 }

@@ -16,3 +16,5 @@ tests run before pushed. if any fails then the push is rejected.
 Logging tools
 
 change service and test to always be whatever the min module count is set to.
+
+get all courses by language, framework, career path, subject, and title.

@@ -32,6 +32,7 @@ class CourseControllerTest {
     CourseService courseService;
 
     private MockMvc mockMvc;
+    private static final String BASE_URL = "/api/courses";  // Base URL as a constant
 
     @BeforeEach
     void setUp() {
@@ -43,7 +44,7 @@ class CourseControllerTest {
     void addCourse() throws Exception {
         Course course = new Course("Test Title", Arrays.asList(Subject.CODE_FOUNDATIONS), Language.JAVA, Framework.SPRING_BOOT, CareerPath.BACK_END_ENGINEER, "Test Description", new ArrayList<>());
         when(courseService.saveCourse(course)).thenReturn(course);
-        mockMvc.perform(post("/api/courses")
+        mockMvc.perform(post(BASE_URL)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{}")) // Replace with actual JSON representation of the course
                 .andExpect(status().isOk());
@@ -54,7 +55,7 @@ class CourseControllerTest {
         Course course1 = new Course("Test Title", Arrays.asList(Subject.CODE_FOUNDATIONS), Language.JAVA, Framework.SPRING_BOOT, CareerPath.BACK_END_ENGINEER, "Test Description", new ArrayList<>());
         Course course2 = new Course("Test Title", Arrays.asList(Subject.CODE_FOUNDATIONS), Language.JAVA, Framework.SPRING_BOOT, CareerPath.BACK_END_ENGINEER, "Test Description", new ArrayList<>());
         when(courseService.getAllCourses()).thenReturn(Arrays.asList(course1, course2));
-        mockMvc.perform(get("/api/courses")
+        mockMvc.perform(get(BASE_URL)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
@@ -64,7 +65,7 @@ class CourseControllerTest {
         Long id = 1L;
         Course course = new Course("Test Title", Arrays.asList(Subject.CODE_FOUNDATIONS), Language.JAVA, Framework.SPRING_BOOT, CareerPath.BACK_END_ENGINEER, "Test Description", new ArrayList<>());
         when(courseService.getCourseById(id)).thenReturn(Optional.of(course));
-        mockMvc.perform(get("/api/courses/" + id)
+        mockMvc.perform(get(BASE_URL + "/" + id)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
@@ -74,7 +75,7 @@ class CourseControllerTest {
         Course course = new Course("Test Title", Arrays.asList(Subject.CODE_FOUNDATIONS), Language.JAVA, Framework.SPRING_BOOT, CareerPath.BACK_END_ENGINEER, "Test Description", new ArrayList<>());
         Long id = 1L;
         when(courseService.updateCourse(course)).thenReturn(course);
-        mockMvc.perform(put("/api/courses/" + id)
+        mockMvc.perform(put(BASE_URL + "/" + id)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{}"))
                 .andExpect(status().isOk());
@@ -83,7 +84,7 @@ class CourseControllerTest {
     @Test
     void deleteCourse() throws Exception {
         Long id = 1L;
-        mockMvc.perform(delete("/api/courses/" + id)
+        mockMvc.perform(delete(BASE_URL + "/" + id)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
