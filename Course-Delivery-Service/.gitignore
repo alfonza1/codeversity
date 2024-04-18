@@ -32,5 +32,5 @@ build/
 ### VS Code ###
 .vscode/
 
-/home/fonza/Projects/LearnCode/Course-Delivery-Service/src/main/resources
-/home/fonza/Projects/codeversity/Course-Delivery-Service/src/main/java/com/CourseDeliveryService/ToAdd.txt
+/home/fonza/Projects/Codeversity/Course-Delivery-Service/src/main/resources/application.properties
+/home/fonza/Projects/Codeversity/Course-Delivery-Service/src/main/java/com/CourseDeliveryService/ToAdd.txt
