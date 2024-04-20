@@ -1,5 +1,6 @@
 package com.CourseDeliveryService.controller;
 
+import com.CourseDeliveryService.exception.ContentNotFoundException;
 import com.CourseDeliveryService.model.Module;
 import com.CourseDeliveryService.service.ModuleService;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,6 +15,8 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import java.util.Arrays;
 import java.util.Optional;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -94,4 +97,5 @@ class ModuleControllerTest {
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
+
 }

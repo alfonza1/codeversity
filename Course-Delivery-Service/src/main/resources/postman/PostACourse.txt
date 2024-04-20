@@ -1,5 +1,6 @@
 {
     "title": "Introduction to React",
+        "author": "Alfonza",
     "subjects": ["WEB_DEVELOPMENT"],
     "language": "JAVASCRIPT",
     "framework": "REACT",

@@ -42,7 +42,7 @@ class CourseServiceTest {
                 new Module("Module 3", "URL3", "Description3"),
                 new Module("Module 4", "URL4", "Description4")
         ));
-        return new Course("Valid Title", Arrays.asList(Subject.CODE_FOUNDATIONS), Language.JAVA, Framework.SPRING_BOOT, CareerPath.BACK_END_ENGINEER, "Valid Description", modules);
+        return new Course("title", "author", Arrays.asList(Subject.CODE_FOUNDATIONS), Language.JAVA, Framework.SPRING_BOOT, CareerPath.BACK_END_ENGINEER, "Valid Description", modules);
     }
 
     @Test

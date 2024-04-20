@@ -14,7 +14,7 @@ import java.util.Map;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(ContentNotFoundException.class)
-    public ResponseEntity<Object> handleCourseNotFoundException(
+    public ResponseEntity<Object> handleContentNotFoundException(
             ContentNotFoundException ex, WebRequest request) {
 
         Map<String, Object> body = new LinkedHashMap<>();

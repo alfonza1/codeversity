@@ -21,6 +21,9 @@ public class Course {
     @Column(nullable = false, length = 50)
     private String title;
 
+    @Column(nullable = false, length = 50)
+    private String author;
+
     @ElementCollection(fetch = FetchType.LAZY)
     @Column(nullable = false, length = 255)
     private List<Subject> subjects;
@@ -41,7 +44,7 @@ public class Course {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Module> modules = new ArrayList<>();
 
-    public Course(String title, List<Subject> subjects, Language language, Framework framework, CareerPath careerPath, String description, List<Module> modules) {
+    public Course(String title, String author, List<Subject> subjects, Language language, Framework framework, CareerPath careerPath, String description, List<Module> modules) {
         this.title = title;
         this.subjects = subjects;
         this.language = language;
@@ -49,6 +52,7 @@ public class Course {
         this.careerPath = careerPath;
         this.description = description;
         this.modules = modules;
+        this.author = author;
     }
 
     public Course() {

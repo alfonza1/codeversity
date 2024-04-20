@@ -103,6 +103,7 @@ public class CourseService {
             if (course.getCareerPath() == null) throw new NullFieldException("careerPath");
             if (course.getDescription() == null) throw new NullFieldException("description");
             if (course.getModules() == null) throw new NullFieldException("modules");
+            if (course.getAuthor() == null) throw new NullFieldException("author");
             if (course.getSubjects() == null || course.getSubjects().isEmpty())
                 throw new NullFieldException("subjects");
             if (course.getModules().size() < 4)
